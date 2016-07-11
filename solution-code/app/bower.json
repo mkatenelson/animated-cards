@@ -1,0 +1,17 @@
+{
+  "name": "app",
+  "homepage": "https://github.com/mkatenelson/animated-cards",
+  "authors": [
+    "Kate Nelson <mkatenelson@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

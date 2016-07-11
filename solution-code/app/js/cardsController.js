@@ -1,5 +1,6 @@
 angular.module('CardsAgainstAssembly')
-  .controller('cardsController', function($scope){
+  .controller('cardsController', function($scope, $http){
+  var self = this;
 
   $scope.swapMe = function(){
     $scope.answerHidden = true;
@@ -10,12 +11,21 @@ angular.module('CardsAgainstAssembly')
         return true;
       }
   };
+  $http.get('https://boiling-everglades-26445.herokuapp.com/api/flashcards')
+  .then(function(response, err) {
+    if (err) {
+      console.log("error", err);
+    }
+    // success method
+    for(var i = 0; i < response.data.length; i++){
+      self.all.push(response.data[i]);
+    }
+  })
 
-  var self = this;
   self.all = [
     {
       cardId: 1,
-      question: "What is Superman's guilty pleasure?", 
+      question: "What is Superman's guilty pleasure?",
       answer: "Ben Affleck",
       answerHidden: true
     },
@@ -69,4 +79,3 @@ angular.module('CardsAgainstAssembly')
     }
   ];
 });
-
