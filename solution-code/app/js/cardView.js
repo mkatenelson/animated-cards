@@ -1,6 +1,6 @@
 angular.module('CardsAgainstAssembly')
 .directive('card', function cardView(){
-    return { 
+    return {
         restrict: "E",
         templateUrl: '_cardView.html',
         scope: {
